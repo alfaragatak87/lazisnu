@@ -20,14 +20,6 @@
         window.netlifyIdentity.open("login");
       }
     });
-
-    window.netlifyIdentity.on("login", () => {
-      document.location.href = "/admin/";
-    });
-
-    window.netlifyIdentity.on("logout", () => {
-      document.location.href = "/";
-    });
   }
 </script>
 
