@@ -1,0 +1,249 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Kontak — LAZISNU Pandanwangi 01</title>
+  <link rel="stylesheet" href="css/style.css">
+
+  <style>
+    body{background:#f7fbf7}
+
+    .kontak-wrap{max-width:1100px;margin:30px auto;padding:20px}
+
+    .kontak-grid{
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:20px;
+      margin-top:20px;
+    }
+
+    .kontak-card{
+      background:#fff;
+      border-radius:12px;
+      padding:20px;
+      box-shadow:0 10px 25px rgba(0,0,0,.05);
+    }
+
+    .kontak-card h3{
+      margin-top:0;
+      color:#1e7a3a;
+    }
+
+    .kontak-info p{
+      margin:6px 0;
+      color:#555;
+      font-size:14px;
+    }
+
+    .btn-wa{
+      background:#25D366;
+      color:#fff;
+      padding:10px 14px;
+      border-radius:8px;
+      text-decoration:none;
+      font-weight:700;
+      display:inline-block;
+      margin-top:10px;
+    }
+
+    .btn-wa:hover{opacity:.9}
+
+    /* MAP */
+    .map-embed{
+      width:100%;
+      height:0;
+      padding-bottom:60%;
+      position:relative;
+      border-radius:12px;
+      overflow:hidden;
+      margin-top:10px;
+    }
+
+    .map-embed iframe{
+      position:absolute;
+      top:0;
+      left:0;
+      width:100%;
+      height:100%;
+      border:0;
+    }
+
+    /* FORM */
+    .form-group{margin-bottom:12px}
+    .form-group label{font-size:13px;color:#555}
+    .form-group input,
+    .form-group textarea{
+      width:100%;
+      padding:10px;
+      border-radius:8px;
+      border:1px solid #e0e0e0;
+      font-size:14px;
+    }
+
+    .btn-kirim{
+      background:#2fa05a;
+      color:#fff;
+      padding:10px 14px;
+      border:0;
+      border-radius:8px;
+      font-weight:700;
+      cursor:pointer;
+    }
+
+    .btn-kirim:hover{opacity:.9}
+
+    @media(max-width:900px){
+      .kontak-grid{grid-template-columns:1fr}
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAVBAR GLOBAL -->
+  <header class="nav-wrap">
+    <div class="container nav">
+      <a class="brand" href="index.html">
+        <img src="assets/img/logo-lazisnu.png" alt="Logo LAZISNU" class="logo">
+        <span class="brand-text">UPZISNU PANDANWANGI 01</span>
+      </a>
+
+      <nav class="nav-links" id="navLinks">
+        <a href="index.html">Beranda</a>
+        <a href="tentang.html">Tentang</a>
+        <a href="program.html">Program</a>
+        <a href="donasi.html">Donasi</a>
+        <a href="laporan.html">Laporan</a>
+        <a href="berita.html">Berita</a>
+        <a href="kontak.html" class="active">Kontak</a>
+      </nav>
+
+      <div class="nav-cta">
+        <button class="btn btn-donate" id="donateBtn">DONASI SEKARANG</button>
+        <button class="nav-toggle" id="navToggle">☰</button>
+      </div>
+    </div>
+  </header>
+
+  <div class="kontak-wrap">
+
+    <h1>Kontak Kami</h1>
+    <p style="color:#666;font-size:14px">Silakan hubungi kami untuk informasi donasi, program, atau kerja sama.</p>
+
+    <div class="kontak-grid">
+
+      <!-- INFO KONTAK -->
+      <div class="kontak-card">
+        <h3>Informasi Kontak</h3>
+        <div class="kontak-info">
+          <p><strong>Alamat:</strong><br>Jl. Wachid Hasyim Desa Pandanwangi 01, Tempeh, Lumajang</p>
+          <p><strong>WhatsApp:</strong><br>0851-3473-9466</p>
+          <p><strong>Email:</strong><br>lazisn393@gmail.com</p>
+          <p><strong>Rekening:</strong><br>Bank Jatim 7432000131<br>a.n UPZISNU Ranting Pandanwangi 01</p>
+        </div>
+
+        <a href="https://wa.me/6285134739466?text=Assalamualaikum%2C%20saya%20ingin%20bertanya%20tentang%20LAZISNU%20Pandanwangi." target="_blank" class="btn-wa">
+          Chat via WhatsApp
+        </a>
+
+        <!-- MAP -->
+        <div class="map-embed">
+          <iframe
+            src="https://www.google.com/maps?q=Q57V%2B59G%2C%20Sambiroto%2C%20Pandanwangi%2C%20Tempeh%2C%20Lumajang&output=embed"
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade">
+          </iframe>
+        </div>
+      </div>
+
+      <!-- FORM PESAN -->
+      <div class="kontak-card">
+        <h3>Kirim Pesan</h3>
+
+        <div class="form-group">
+          <label>Nama</label>
+          <input type="text" id="nama" placeholder="Nama Anda">
+        </div>
+
+        <div class="form-group">
+          <label>No. WhatsApp</label>
+          <input type="text" id="wa" placeholder="08xxxxxxxxxx">
+        </div>
+
+        <div class="form-group">
+          <label>Pesan</label>
+          <textarea id="pesan" rows="5" placeholder="Tulis pesan Anda"></textarea>
+        </div>
+
+        <button class="btn-kirim" onclick="kirimWA()">Kirim Pesan</button>
+      </div>
+
+    </div>
+
+  </div>
+
+  <!-- FOOTER -->
+  <footer class="site-footer">
+    <div class="container footer-grid">
+  
+      <!-- KOLOM 1: LOGO & DESKRIPSI -->
+      <div class="footer-col">
+        <img src="assets/img/logo-lazisnu.png" alt="Logo LAZISNU" class="footer-logo">
+        <p>
+          LAZISNU Pandanwangi 01 adalah lembaga amil zakat yang mengelola Zakat, Infak, dan Sedekah
+          secara amanah, transparan, dan profesional.
+        </p>
+      </div>
+  
+      <!-- KOLOM 2: MENU CEPAT -->
+      <div class="footer-col">
+        <h4>Menu</h4>
+        <ul class="footer-links">
+          <li><a href="index.html">Beranda</a></li>
+          <li><a href="tentang.html">Tentang</a></li>
+          <li><a href="program.html">Program</a></li>
+          <li><a href="donasi.html">Donasi</a></li>
+          <li><a href="laporan.html">Laporan</a></li>
+          <li><a href="berita.html">Berita</a></li>
+          <li><a href="kontak.html">Kontak</a></li>
+        </ul>
+      </div>
+  
+      <!-- KOLOM 3: KONTAK -->
+      <div class="footer-col">
+        <h4>Kontak</h4>
+        <p>Jl. Wachid Hasyim<br>Pandanwangi 01, Tempeh, Lumajang</p>
+        <p>WhatsApp: 0851-3473-9466</p>
+        <p>Email: lazisn393@gmail.com</p>
+      </div>
+    </div>
+  
+    <div class="footer-bottom">
+      <div class="container footer-bottom-inner">
+        <small>© <span id="year"></span> LAZISNU Pandanwangi 01</small>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/script.js"></script>
+  <script>
+    document.getElementById('yearKontak').textContent = new Date().getFullYear();
+
+    function kirimWA(){
+      const nama = document.getElementById('nama').value;
+      const wa = document.getElementById('wa').value;
+      const pesan = document.getElementById('pesan').value;
+
+      if(!nama || !pesan){
+        alert("Nama dan pesan wajib diisi");
+        return;
+      }
+
+      const url = `https://wa.me/6285134739466?text=Assalamualaikum%2C%20saya%20${encodeURIComponent(nama)}.%0ANo%20WA:%20${encodeURIComponent(wa)}.%0APesan:%20${encodeURIComponent(pesan)}`;
+      window.open(url, '_blank');
+    }
+  </script>
+
+</body>
+</html>

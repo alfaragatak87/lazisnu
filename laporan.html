@@ -1,0 +1,254 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Laporan — LAZISNU Pandanwangi 01</title>
+  <link rel="stylesheet" href="css/style.css">
+
+  <style>
+    body{background:#f7fbf7}
+
+    .laporan-wrap{max-width:1000px;margin:30px auto;padding:20px}
+
+    .laporan-card{
+      background:#fff;
+      border-radius:14px;
+      padding:20px;
+      box-shadow:0 10px 30px rgba(0,0,0,.05);
+      margin-bottom:20px;
+    }
+
+    .laporan-header{
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      flex-wrap:wrap;
+      gap:10px;
+    }
+
+    .laporan-header h1{
+      margin:0;
+      color:#1e7a3a;
+    }
+
+    .laporan-info{
+      color:#666;
+      font-size:14px;
+      margin-top:6px;
+    }
+
+    table{
+      width:100%;
+      border-collapse:collapse;
+      margin-top:15px;
+    }
+
+    th, td{
+      padding:12px;
+      border-bottom:1px solid #eee;
+      text-align:left;
+      font-size:14px;
+    }
+
+    th{
+      background:#f1f8f1;
+      color:#1e7a3a;
+    }
+
+    .btn-download{
+      background:#2fa05a;
+      color:#fff;
+      padding:8px 12px;
+      border-radius:8px;
+      text-decoration:none;
+      font-weight:700;
+      font-size:13px;
+      display:inline-block;
+    }
+
+    .btn-download:hover{opacity:.9}
+
+    .status{
+      padding:4px 8px;
+      border-radius:6px;
+      font-size:12px;
+      font-weight:700;
+      display:inline-block;
+    }
+
+    .verified{background:#e6f7ec;color:#1e7a3a}
+    .pending{background:#fff4e5;color:#b26a00}
+
+    .summary{
+      display:grid;
+      grid-template-columns:repeat(3,1fr);
+      gap:12px;
+      margin-top:20px;
+    }
+
+    .summary-box{
+      background:#fff;
+      border-radius:12px;
+      padding:16px;
+      text-align:center;
+      box-shadow:0 6px 20px rgba(0,0,0,.04);
+    }
+
+    .summary-box h3{
+      margin:0;
+      color:#1e7a3a;
+      font-size:20px;
+    }
+
+    .summary-box p{
+      margin:4px 0 0 0;
+      color:#666;
+      font-size:13px;
+    }
+
+    @media(max-width:700px){
+      .summary{grid-template-columns:1fr}
+      table{font-size:13px}
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAVBAR GLOBAL -->
+  <header class="nav-wrap">
+    <div class="container nav">
+      <a class="brand" href="index.html">
+        <img src="assets/img/logo-lazisnu.png" alt="Logo LAZISNU" class="logo">
+        <span class="brand-text">UPZISNU PANDANWANGI 01</span>
+      </a>
+
+      <nav class="nav-links" id="navLinks">
+        <a href="index.html">Beranda</a>
+        <a href="tentang.html">Tentang</a>
+        <a href="program.html">Program</a>
+        <a href="donasi.html">Donasi</a>
+        <a href="laporan.html" class="active">Laporan</a>
+        <a href="berita.html">Berita</a>
+        <a href="kontak.html">Kontak</a>
+      </nav>
+
+      <div class="nav-cta">
+        <button class="btn btn-donate" id="donateBtn">DONASI SEKARANG</button>
+        <button class="nav-toggle" id="navToggle" aria-label="Toggle menu">☰</button>
+      </div>
+    </div>
+  </header>
+
+  <!-- KONTEN -->
+  <div class="laporan-wrap">
+
+    <div class="laporan-card">
+      <div class="laporan-header">
+        <div>
+          <h1>Laporan Keuangan & Kegiatan</h1>
+          <div class="laporan-info">
+            Transparansi laporan pengelolaan Zakat, Infak, dan Sedekah LAZISNU Pandanwangi 01
+          </div>
+        </div>
+      </div>
+
+      <!-- TABEL LAPORAN -->
+      <table>
+        <thead>
+          <tr>
+            <th>Bulan</th>
+            <th>Tahun</th>
+            <th>Status</th>
+            <th>Unduh</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Januari</td>
+            <td>2026</td>
+            <td><span class="status verified">Terverifikasi</span></td>
+            <td>
+              <a href="assets/laporan/laporan-januari-2026.pdf" class="btn-download" target="_blank">
+                Download PDF
+              </a>
+            </td>
+          </tr>
+
+          <tr>
+            <td>Februari</td>
+            <td>2026</td>
+            <td><span class="status verified">Terverifikasi</span></td>
+            <td>
+              <a href="assets/laporan/laporan-februari-2026.pdf" class="btn-download" target="_blank">
+                Download PDF
+              </a>
+            </td>
+          </tr>
+
+          <tr>
+            <td>Maret</td>
+            <td>2026</td>
+            <td><span class="status pending">Menunggu Upload</span></td>
+            <td>-</td>
+          </tr>
+        </tbody>
+      </table>
+
+
+    </div>
+
+  </div>
+
+  <!-- FOOTER -->
+  <footer class="site-footer">
+    <div class="container footer-grid">
+  
+      <!-- KOLOM 1: LOGO & DESKRIPSI -->
+      <div class="footer-col">
+        <img src="assets/img/logo-lazisnu.png" alt="Logo LAZISNU" class="footer-logo">
+        <p>
+          LAZISNU Pandanwangi 01 adalah lembaga amil zakat yang mengelola Zakat, Infak, dan Sedekah
+          secara amanah, transparan, dan profesional.
+        </p>
+      </div>
+  
+      <!-- KOLOM 2: MENU CEPAT -->
+      <div class="footer-col">
+        <h4>Menu</h4>
+        <ul class="footer-links">
+          <li><a href="index.html">Beranda</a></li>
+          <li><a href="tentang.html">Tentang</a></li>
+          <li><a href="program.html">Program</a></li>
+          <li><a href="donasi.html">Donasi</a></li>
+          <li><a href="laporan.html">Laporan</a></li>
+          <li><a href="berita.html">Berita</a></li>
+          <li><a href="kontak.html">Kontak</a></li>
+        </ul>
+      </div>
+  
+      <!-- KOLOM 3: KONTAK -->
+      <div class="footer-col">
+        <h4>Kontak</h4>
+        <p>Jl. Wachid Hasyim<br>Pandanwangi 01, Tempeh, Lumajang</p>
+        <p>WhatsApp: 0851-3473-9466</p>
+        <p>Email: lazisn393@gmail.com</p>
+      </div>
+    </div>
+  
+    <div class="footer-bottom">
+      <div class="container footer-bottom-inner">
+        <small>© <span id="year"></span> LAZISNU Pandanwangi 01</small>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- SCRIPT GLOBAL -->
+  <script src="js/script.js"></script>
+  <script>
+    document.getElementById('yearLaporan').textContent = new Date().getFullYear();
+  </script>
+
+</body>
+</html>

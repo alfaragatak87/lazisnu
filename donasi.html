@@ -1,0 +1,166 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Donasi QRIS — LAZISNU Pandanwangi 01</title>
+  <link rel="stylesheet" href="css/style.css">
+
+  <style>
+    body{background:#f6fbf6}
+    .donate-wrap{max-width:800px;margin:30px auto;padding:20px}
+    .qris-card{
+      background:#fff;
+      border-radius:14px;
+      padding:24px;
+      text-align:center;
+      box-shadow:0 10px 30px rgba(0,0,0,.05);
+    }
+    .qris-img{
+      max-width:300px;
+      margin:20px auto;
+      border-radius:10px;
+      box-shadow:0 6px 20px rgba(0,0,0,.08);
+    }
+    .pulse{
+      animation:pulse 1.5s infinite;
+    }
+    @keyframes pulse{
+      0%{transform:scale(1)}
+      50%{transform:scale(1.05)}
+      100%{transform:scale(1)}
+    }
+    .steps{
+      text-align:left;
+      margin-top:20px;
+      line-height:1.6;
+      color:#555;
+    }
+    .steps li{margin-bottom:6px}
+    .btn-wa{
+      background:#1bca5b;
+      color:#fff;
+      border:0;
+      padding:12px 18px;
+      border-radius:10px;
+      font-weight:700;
+      cursor:pointer;
+      margin-top:18px;
+      display:inline-block;
+      text-decoration:none;
+    }
+    .btn-wa:hover{opacity:.9}
+    .note{
+      font-size:13px;
+      color:#777;
+      margin-top:10px;
+    }
+  </style>
+</head>
+<body>
+
+<!-- NAVBAR (tetap) -->
+<header class="nav-wrap">
+    <div class="container nav">
+      <a class="brand" href="index.html">
+        <img src="assets/img/logo-lazisnu.png" alt="Logo LAZISNU" class="logo">
+        <span class="brand-text">UPZISNU PANDANWANGI 01</span>
+      </a>
+
+      <nav class="nav-links" id="navLinksTop">
+        <a href="index.html">Beranda</a>
+        <a href="tentang.html">Tentang</a>
+        <a href="program.html">Program</a>
+        <a href="donasi.html" class="active">Donasi</a>
+        <a href="laporan.html">Laporan</a>
+        <a href="berita.html">Berita</a>
+        <a href="kontak.html">Kontak</a>
+      </nav>
+
+      <div class="nav-cta">
+        <button id="navToggleTop" class="nav-toggle" aria-label="Toggle menu">☰</button>
+      </div>
+    </div>
+  </header>
+
+  <div class="donate-wrap">
+
+    <div class="qris-card">
+
+      <h1>Donasi via QRIS</h1>
+      <p>Silakan scan QRIS di bawah ini menggunakan aplikasi pembayaran Anda.</p>
+
+      <!-- QRIS IMAGE -->
+      <img src="assets/img/qris.png" alt="QRIS LAZISNU" class="qris-img pulse">
+
+      <h3>Langkah Donasi</h3>
+      <ol class="steps">
+        <li>Buka aplikasi pembayaran (BRI, BCA, DANA, OVO, dll).</li>
+        <li>Pilih menu <strong>Scan QRIS</strong>.</li>
+        <li>Masukkan nominal donasi sesuai keinginan.</li>
+        <li>Simpan bukti transfer.</li>
+        <li>Konfirmasi donasi melalui WhatsApp admin.</li>
+      </ol>
+
+      <a href="https://wa.me/6285134739466?text=Assalamualaikum%2C%20saya%20ingin%20konfirmasi%20donasi%20QRIS%20LAZISNU%20Pandanwangi.%20Berikut%20bukti%20transfer%20saya." target="_blank" class="btn-wa">
+        Konfirmasi via WhatsApp
+      </a>
+
+      <div class="note">
+        Donasi Anda akan dicatat dan dilaporkan pada laporan bulanan LAZISNU Pandanwangi 01.
+      </div>
+
+    </div>
+
+  </div>
+
+  <!-- FOOTER -->
+  <footer class="site-footer">
+    <div class="container footer-grid">
+  
+      <!-- KOLOM 1: LOGO & DESKRIPSI -->
+      <div class="footer-col">
+        <img src="assets/img/logo-lazisnu.png" alt="Logo LAZISNU" class="footer-logo">
+        <p>
+          LAZISNU Pandanwangi 01 adalah lembaga amil zakat yang mengelola Zakat, Infak, dan Sedekah
+          secara amanah, transparan, dan profesional.
+        </p>
+      </div>
+  
+      <!-- KOLOM 2: MENU CEPAT -->
+      <div class="footer-col">
+        <h4>Menu</h4>
+        <ul class="footer-links">
+          <li><a href="index.html">Beranda</a></li>
+          <li><a href="tentang.html">Tentang</a></li>
+          <li><a href="program.html">Program</a></li>
+          <li><a href="donasi.html">Donasi</a></li>
+          <li><a href="laporan.html">Laporan</a></li>
+          <li><a href="berita.html">Berita</a></li>
+          <li><a href="kontak.html">Kontak</a></li>
+        </ul>
+      </div>
+  
+      <!-- KOLOM 3: KONTAK -->
+      <div class="footer-col">
+        <h4>Kontak</h4>
+        <p>Jl. Wachid Hasyim<br>Pandanwangi 01, Tempeh, Lumajang</p>
+        <p>WhatsApp: 0851-3473-9466</p>
+        <p>Email: lazisn393@gmail.com</p>
+      </div>
+    </div>
+  
+    <div class="footer-bottom">
+      <div class="container footer-bottom-inner">
+        <small>© <span id="year"></span> LAZISNU Pandanwangi 01</small>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById('yearDonasi').textContent = new Date().getFullYear();
+  </script>
+
+</body>
+</html>

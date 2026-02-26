@@ -1,0 +1,203 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>LAZISNU Pandanwangi 01 — Beranda</title>
+  <meta name="description" content="LAZISNU Pandanwangi 01 — Mengelola Zakat, Infak & Sedekah secara amanah dan transparan." />
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<!-- Netlify Identity -->
+<script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+
+<script>
+  if (window.netlifyIdentity) {
+    window.netlifyIdentity.on("init", user => {
+      if (user) {
+        console.log("User login:", user.email);
+      }
+    });
+
+    // supaya recovery_token bisa munculin form password
+    window.netlifyIdentity.on("open", () => {
+      console.log("Identity widget opened");
+    });
+
+    window.netlifyIdentity.init();
+  }
+</script>
+<body>
+
+  <!-- NAVBAR -->
+  <header class="nav-wrap">
+    <div class="container nav">
+      <a class="brand" href="index.html">
+        <img src="assets/img/logo-lazisnu.png" alt="Logo LAZISNU" class="logo">
+        <span class="brand-text">UPZISNU PANDANWANGI 01</span>
+      </a>
+
+      <nav class="nav-links" id="navLinks">
+        <a href="index.html" class="active">Beranda</a>
+        <a href="tentang.html">Tentang</a>
+        <a href="program.html">Program</a>
+        <a href="donasi.html">Donasi</a>
+        <a href="laporan.html">Laporan</a>
+        <a href="berita.html">Berita</a>
+        <a href="kontak.html">Kontak</a>
+      </nav>
+
+      <div class="nav-cta">
+        <button class="btn btn-donate donateBtn">DONASI SEKARANG</button>
+        <button id="navToggle" class="nav-toggle">☰</button>
+      </div>
+    </div>
+  </header>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-overlay"></div>
+    <img src="assets/img/hero.jpg" class="hero-img">
+    <div class="container hero-content">
+      <h1>LAZISNU Ranting Pandanwangi 01</h1>
+      <p class="lead">Mengelola Zakat, Infak, dan Sedekah secara amanah dan transparan untuk meningkatkan kesejahteraan masyarakat.</p>
+      <div class="hero-buttons">
+        <button class="btn btn-donate donateBtn">DONASI SEKARANG</button>
+        <a href="tentang.html" class="btn btn-outline">Tentang Kami</a>
+      </div>
+    </div>
+  </section>
+
+  <main class="container">
+
+    <!-- PROGRAM -->
+    <section class="programs">
+      <h2>Program Unggulan Kami</h2>
+
+      <div class="cards">
+        <article class="card">
+          <img src="assets/program/santunan-yatim.jpg">
+          <h3>Santunan Anak Yatim</h3>
+          <p>Bantuan rutin bagi anak yatim di Desa Pandanwangi.</p>
+          <a class="btn btn-sm" href="program.html#yatim">Lihat Program</a>
+        </article>
+
+        <article class="card">
+          <img src="assets/program/sembako.jpg">
+          <h3>Bantuan Sembako</h3>
+          <p>Paket sembako untuk keluarga dhuafa.</p>
+          <a class="btn btn-sm" href="program.html#sembako">Lihat Program</a>
+        </article>
+
+        <article class="card">
+          <img src="assets/program/santunan-duka-cita.jpg">
+          <h3>Santunan Duka Cita</h3>
+          <p>Bantuan untuk keluarga yang berduka.</p>
+          <a class="btn btn-sm" href="program.html#duka">Lihat Program</a>
+        </article>
+      </div>
+
+      <div class="center">
+        <a href="program.html" class="btn btn-outline">Lihat Semua Program</a>
+      </div>
+    </section>
+
+    <!-- BERITA -->
+    <section class="news">
+      <h2>Berita & Kegiatan Terbaru</h2>
+
+      <div class="news-grid">
+        <article class="news-card">
+          <img src="assets/berita/berita-santunan-yatim.jpg">
+          <div class="news-body">
+            <h4>Santunan Anak Yatim</h4>
+            <p class="meta">12 Februari 2026</p>
+            <a href="berita.html" class="read-more">Baca Selengkapnya →</a>
+          </div>
+        </article>
+
+        <article class="news-card">
+          <img src="assets/berita/berita-sembako.jpg">
+          <div class="news-body">
+            <h4>Penyaluran Paket Sembako</h4>
+            <p class="meta">03 Februari 2026</p>
+            <a href="berita.html" class="read-more">Baca Selengkapnya →</a>
+          </div>
+        </article>
+
+        <article class="news-card">
+          <img src="assets/berita/berita-santunan-duka-cita.jpg">
+          <div class="news-body">
+            <h4>Santunan Duka Cita</h4>
+            <p class="meta">28 Januari 2026</p>
+            <a href="berita.html" class="read-more">Baca Selengkapnya →</a>
+          </div>
+        </article>
+      </div>
+
+      <div class="center">
+        <a href="berita.html" class="btn btn-outline">Semua Berita</a>
+      </div>
+    </section>
+
+    <!-- CTA DONASI -->
+    <section class="cta-donate">
+      <div class="cta-inner">
+        <div>
+          <h2>Yuk, Tunaikan Zakat & Sedekah Anda</h2>
+          <p>Salurkan zakat, infak, dan sedekah pada LAZISNU Pandanwangi 01.</p>
+        </div>
+        <div>
+          <button class="btn btn-donate donateBtn">Donasi Sekarang</button>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="site-footer">
+    <div class="container footer-grid">
+  
+      <!-- KOLOM 1: LOGO & DESKRIPSI -->
+      <div class="footer-col">
+        <img src="assets/img/logo-lazisnu.png" alt="Logo LAZISNU" class="footer-logo">
+        <p>
+          LAZISNU Pandanwangi 01 adalah lembaga amil zakat yang mengelola Zakat, Infak, dan Sedekah
+          secara amanah, transparan, dan profesional.
+        </p>
+      </div>
+  
+      <!-- KOLOM 2: MENU CEPAT -->
+      <div class="footer-col">
+        <h4>Menu</h4>
+        <ul class="footer-links">
+          <li><a href="index.html">Beranda</a></li>
+          <li><a href="tentang.html">Tentang</a></li>
+          <li><a href="program.html">Program</a></li>
+          <li><a href="donasi.html">Donasi</a></li>
+          <li><a href="laporan.html">Laporan</a></li>
+          <li><a href="berita.html">Berita</a></li>
+          <li><a href="kontak.html">Kontak</a></li>
+        </ul>
+      </div>
+  
+      <!-- KOLOM 3: KONTAK -->
+      <div class="footer-col">
+        <h4>Kontak</h4>
+        <p>Jl. Wachid Hasyim<br>Pandanwangi 01, Tempeh, Lumajang</p>
+        <p>WhatsApp: 0851-3473-9466</p>
+        <p>Email: lazisn393@gmail.com</p>
+      </div>
+    </div>
+  
+    <div class="footer-bottom">
+      <div class="container footer-bottom-inner">
+        <small>© <span id="year"></span> LAZISNU Pandanwangi 01</small>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/script.js"></script>
+</body>
+</html>

@@ -1,0 +1,229 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Program — LAZISNU Pandanwangi 01</title>
+  <meta name="description" content="Program UPZISNU Pandanwangi 01 — Santunan Yatim, Sembako, Santunan Duka Cita, Ramadhan, Sosial & Keagamaan" />
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- NAVBAR -->
+  <header class="nav-wrap">
+    <div class="container nav">
+      <a class="brand" href="index.html">
+        <img src="assets/img/logo-lazisnu.png" alt="Logo LAZISNU" class="logo">
+        <span class="brand-text">UPZISNU PANDANWANGI 01</span>
+      </a>
+
+      <nav class="nav-links" id="navLinksPrograms">
+        <a href="index.html">Beranda</a>
+        <a href="tentang.html">Tentang</a>
+        <a href="program.html" class="active">Program</a>
+        <a href="donasi.html">Donasi</a>
+        <a href="laporan.html">Laporan</a>
+        <a href="berita.html">Berita</a>
+        <a href="kontak.html">Kontak</a>
+      </nav>
+
+      <div class="nav-cta">
+        <button id="donateTopPrograms" class="btn btn-donate">DONASI SEKARANG</button>
+        <button id="navTogglePrograms" class="nav-toggle" aria-label="Toggle menu">☰</button>
+      </div>
+    </div>
+  </header>
+
+  <main class="container" style="padding-top:28px;">
+
+    <section class="programs">
+      <h1>Program Unggulan LAZISNU Pandanwangi 01</h1>
+      <p style="color:var(--muted);margin-top:6px;">Kami menjalankan program yang fokus pada bantuan sosial, kemanusiaan, dan kepedulian masyarakat. Pilih program yang ingin Anda dukung, lalu klik <strong>Donasi Sekarang</strong>.</p>
+
+      <!-- Grid program utama -->
+      <div class="cards" style="margin-top:18px;">
+        <!-- Santunan Anak Yatim -->
+        <article class="card" id="yatim">
+          <img src="assets/program/santunan-yatim.jpg" alt="Santunan Anak Yatim">
+          <div style="padding:12px 16px">
+            <h3>Santunan Anak Yatim</h3>
+            <p style="color:var(--muted);font-size:14px">Memberikan bantuan rutin (santunan & paket makanan) bagi anak yatim di Desa Pandanwangi. Program ini bertujuan mendukung kebutuhan dasar dan memberikan perhatian sosial kepada anak-anak yang kehilangan orang tua.</p>
+            <div style="display:flex;gap:8px;align-items:center;margin-top:10px">
+              <button class="btn btn-donate btn-program" data-program="Santunan Anak Yatim">Donasi Sekarang</button>
+              <a class="btn btn-sm btn-outline" href="berita.html#yatim">Dokumentasi</a>
+            </div>
+          </div>
+        </article>
+
+        <!-- Bantuan Sembako -->
+        <article class="card" id="sembako">
+          <img src="assets/program/sembako.jpg" alt="Bantuan Sembako">
+          <div style="padding:12px 16px">
+            <h3>Bantuan Sembako</h3>
+            <p style="color:var(--muted);font-size:14px">Pendistribusian paket sembako kepada keluarga kurang mampu, lansia, dan warga terdampak ekonomi. Paket berisi kebutuhan pokok seperti beras, minyak, gula, dan bahan pokok lainnya.</p>
+            <div style="display:flex;gap:8px;align-items:center;margin-top:10px">
+              <button class="btn btn-donate btn-program" data-program="Penyaluran Paket Sembako">Donasi Sekarang</button>
+              <a class="btn btn-sm btn-outline" href="berita.html#sembako">Dokumentasi</a>
+            </div>
+          </div>
+        </article>
+
+        <!-- Santunan Duka Cita -->
+        <article class="card" id="duka">
+          <img src="assets/program/santunan-duka-cita.jpg" alt="Santunan Duka Cita">
+          <div style="padding:12px 16px">
+            <h3>Santunan Duka Cita</h3>
+            <p style="color:var(--muted);font-size:14px">Bantuan bentuk dukungan moral dan materi kepada keluarga yang ditinggalkan. Memberikan bantuan untuk kebutuhan pemakaman dan santunan bagi keluarga yang berduka.</p>
+            <div style="display:flex;gap:8px;align-items:center;margin-top:10px">
+              <button class="btn btn-donate btn-program" data-program="Santunan Duka Cita">Donasi Sekarang</button>
+              <a class="btn btn-sm btn-outline" href="berita.html#duka">Dokumentasi</a>
+            </div>
+          </div>
+        </article>
+      </div>
+
+      <!-- Program tambahan / musiman -->
+      <div style="margin-top:22px">
+        <h2>Program Musiman & Kegiatan Lain</h2>
+        <p style="color:var(--muted)">Kegiatan yang berjalan sesuai kebutuhan dan momentum seperti Ramadhan serta dukungan sosial keagamaan.</p>
+
+        <div class="cards" style="margin-top:12px; grid-template-columns:repeat(2,1fr);">
+          <article class="card" id="ramadhan">
+            <img src="assets/program/ramadhan.jpg" alt="Program Ramadhan (opsional)">
+            <div style="padding:12px 16px">
+              <h3>Program Ramadhan</h3>
+              <p style="color:var(--muted);font-size:14px">Kegiatan Ramadhan meliputi pembagian takjil, santunan yatim khusus Ramadhan, dan pengumpulan serta penyaluran zakat fitrah.</p>
+              <div style="display:flex;gap:8px;align-items:center;margin-top:10px">
+                <button class="btn btn-donate btn-program" data-program="Program Ramadhan">Donasi Sekarang</button>
+                <a class="btn btn-sm btn-outline" href="berita.html#ramadhan">Dokumentasi</a>
+              </div>
+            </div>
+          </article>
+
+          <article class="card" id="sosial">
+            <img src="assets/program/sosial.jpg" alt="Kegiatan Sosial & Keagamaan (opsional)">
+            <div style="padding:12px 16px">
+              <h3>Kegiatan Sosial & Keagamaan</h3>
+              <p style="color:var(--muted);font-size:14px">Dukungan kegiatan keagamaan, kerja sama dengan lembaga setempat, dan program pemberdayaan masyarakat berbasis lokal.</p>
+              <div style="display:flex;gap:8px;align-items:center;margin-top:10px">
+                <button class="btn btn-donate btn-program" data-program="Kegiatan Sosial & Keagamaan">Donasi Sekarang</button>
+                <a class="btn btn-sm btn-outline" href="berita.html#sosial">Dokumentasi</a>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+
+      <div class="center" style="margin-top:18px;">
+        <a href="donasi.html" class="btn btn-outline">Cara Donasi & Konfirmasi</a>
+      </div>
+    </section>
+
+    <!-- SECTION PENJELASAN RINGKAS -->
+    <section class="about" style="margin-top:22px;">
+      <div class="about-grid">
+        <div>
+          <h2>Mengapa Donasi Lewat LAZISNU?</h2>
+          <ul style="color:var(--muted);margin-left:16px;line-height:1.6">
+            <li>Transparansi laporan berkala.</li>
+            <li>Penyaluran tepat sasaran sesuai aspek syariah.</li>
+            <li>Dilakukan oleh pengurus lokal yang memahami kondisi setempat.</li>
+          </ul>
+        </div>
+        <aside class="about-contact">
+          <h3>Rekening Donasi</h3>
+          <p><strong>Bank Jatim</strong><br>Nomor: <strong>7432000131</strong><br>Atas Nama: UPZISNU Ranting Pandanwangi 01</p>
+          <p style="margin-top:8px;color:var(--muted)">Setelah transfer, konfirmasi via WhatsApp agar donasi dapat diproses dan dicatat.</p>
+        </aside>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="site-footer">
+    <div class="container footer-grid">
+  
+      <!-- KOLOM 1: LOGO & DESKRIPSI -->
+      <div class="footer-col">
+        <img src="assets/img/logo-lazisnu.png" alt="Logo LAZISNU" class="footer-logo">
+        <p>
+          LAZISNU Pandanwangi 01 adalah lembaga amil zakat yang mengelola Zakat, Infak, dan Sedekah
+          secara amanah, transparan, dan profesional.
+        </p>
+      </div>
+  
+      <!-- KOLOM 2: MENU CEPAT -->
+      <div class="footer-col">
+        <h4>Menu</h4>
+        <ul class="footer-links">
+          <li><a href="index.html">Beranda</a></li>
+          <li><a href="tentang.html">Tentang</a></li>
+          <li><a href="program.html">Program</a></li>
+          <li><a href="donasi.html">Donasi</a></li>
+          <li><a href="laporan.html">Laporan</a></li>
+          <li><a href="berita.html">Berita</a></li>
+          <li><a href="kontak.html">Kontak</a></li>
+        </ul>
+      </div>
+  
+      <!-- KOLOM 3: KONTAK -->
+      <div class="footer-col">
+        <h4>Kontak</h4>
+        <p>Jl. Wachid Hasyim<br>Pandanwangi 01, Tempeh, Lumajang</p>
+        <p>WhatsApp: 0851-3473-9466</p>
+        <p>Email: lazisn393@gmail.com</p>
+      </div>
+    </div>
+  
+    <div class="footer-bottom">
+      <div class="container footer-bottom-inner">
+        <small>© <span id="year"></span> LAZISNU Pandanwangi 01</small>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // set year
+    document.getElementById('yearProgram').textContent = new Date().getFullYear();
+
+    // donate buttons: open WA with prefilled message mentioning program
+    (function(){
+      const phone = '6285134739466';
+      function makeUrl(program){
+        const text = encodeURIComponent('Assalamualaikum, saya ingin konfirmasi donasi untuk program: ' + program + '. Nama: . Nominal: . Jenis: . Terima kasih.');
+        return `https://wa.me/${phone}?text=${text}`;
+      }
+
+      document.querySelectorAll('.btn-program').forEach(btn=>{
+        btn.addEventListener('click', function(){
+          const program = this.dataset.program || 'Donasi Umum';
+          window.open(makeUrl(program), '_blank');
+        });
+      });
+
+      // top donate fallback
+      document.getElementById('donateTopPrograms')?.addEventListener('click', ()=>{
+        window.open(`https://wa.me/${phone}?text=` + encodeURIComponent('Assalamualaikum, saya ingin konfirmasi donasi.'), '_blank');
+      });
+
+      // nav toggle for small screens
+      document.getElementById('navTogglePrograms')?.addEventListener('click', ()=> {
+        const nav = document.getElementById('navLinksPrograms');
+        if(!nav) return;
+        nav.style.display = nav.style.display === 'flex' ? 'none' : 'flex';
+        nav.style.flexDirection = 'column';
+        nav.style.gap = '8px';
+        nav.style.padding = '12px';
+        nav.style.background = '#fff';
+        nav.style.position = 'absolute';
+        nav.style.right = '12px';
+        nav.style.top = '64px';
+        nav.style.boxShadow = '0 8px 20px rgba(0,0,0,.08)';
+      });
+
+    })();
+  </script>
+</body>
+</html>

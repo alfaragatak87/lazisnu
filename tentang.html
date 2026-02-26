@@ -1,0 +1,278 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Tentang Kami — LAZISNU Pandanwangi 01</title>
+  <meta name="description" content="Profil UPZISNU Pandanwangi 01 — Lembaga Amil Zakat Nahdlatul Ulama Ranting Pandanwangi 01" />
+  <link rel="stylesheet" href="css/style.css">
+
+  <!-- Styling khusus untuk halaman Tentang (gabungan langsung di file HTML) -->
+  <style>
+    :root{
+      --accent-ice: rgba(255,255,255,0.06);
+      --card-border: rgba(14,14,14,0.04);
+      --muted-2: #313831;
+    }
+
+    .about-hero {
+      display:flex;
+      gap:20px;
+      align-items:center;
+      background: linear-gradient(90deg, rgba(46,116,54,0.06), rgba(46,116,54,0.02));
+      padding:20px;
+      border-radius:12px;
+      margin-bottom:18px;
+      box-shadow: 0 6px 18px rgba(14,14,14,0.03);
+    }
+    .about-hero .hero-left{flex:1;}
+    .about-hero h1{font-size:22px;color:var(--green-700);margin-bottom:6px}
+    .about-hero p{color:var(--muted);margin-bottom:10px}
+    .sk-badge{
+      display:inline-block;background:var(--accent);color:#111;font-weight:700;
+      padding:8px 10px;border-radius:8px;box-shadow:0 6px 18px rgba(8, 8, 8, 0.12);
+    }
+
+    .info-box{
+      background:#ffffff;border:1px solid var(--card-border);padding:14px;border-radius:10px;
+      box-shadow:0 8px 20px rgba(14,14,14,.03);
+    }
+    .info-box p{color:var(--muted-2);margin:6px 0;font-size:14px}
+
+    .pengurus-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:14px}
+    .pengurus-card{
+      background:linear-gradient(180deg,#fff,#fcfff9);
+      border-radius:12px;padding:14px;display:flex;gap:12px;align-items:center;
+      border:1px solid var(--card-border);
+      transition:transform .18s ease, box-shadow .18s ease;
+    }
+    .pengurus-card:hover{transform:translateY(-6px);box-shadow:0 14px 30px rgba(14,14,14,.06)}
+    .pengurus-card img{width:88px;height:88px;object-fit:cover;border-radius:50%;border:4px solid #fff;box-shadow:0 6px 18px rgba(0,0,0,.06)}
+    .pengurus-meta h4{margin:0 0 6px 0;color:var(--green-700)}
+    .pengurus-meta p{margin:0;color:var(--muted-2);font-size:14px}
+
+    .role-badge{display:inline-block;background:var(--green-300);color:var(--green-700);padding:6px 8px;border-radius:8px;font-weight:700;font-size:12px;margin-bottom:8px}
+
+    .vision-card{background:#fff;padding:14px;border-radius:12px;border:1px solid var(--card-border);box-shadow:0 8px 20px rgba(14,14,14,.03)}
+    .mission-list{list-style:disc;margin-left:18px;color:var(--muted);line-height:1.6}
+    .mission-list li{margin-bottom:8px}
+
+    .sk-download{
+      display:inline-block;padding:10px 12px;background:transparent;border:2px solid var(--green-500);
+      color:var(--green-700);border-radius:10px;font-weight:700;
+      transition:background .15s ease, color .15s ease;
+    }
+    .sk-download:hover{background:var(--green-500);color:#fff}
+
+    .gallery-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-top:12px}
+    .gallery-grid img{width:100%;height:140px;object-fit:cover;border-radius:8px;display:block;box-shadow:0 6px 18px rgba(14,14,14,.04)}
+
+    @media (max-width:980px){
+      .pengurus-grid{grid-template-columns:1fr}
+      .gallery-grid{grid-template-columns:repeat(2,1fr)}
+    }
+    @media (max-width:640px){
+      .about-hero{flex-direction:column;align-items:flex-start}
+      .gallery-grid img{height:120px}
+      .about-hero h1{font-size:20px}
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAVBAR (tetap) -->
+  <header class="nav-wrap">
+    <div class="container nav">
+      <a class="brand" href="index.html">
+        <img src="assets/img/logo-lazisnu.png" alt="Logo LAZISNU" class="logo">
+        <span class="brand-text">UPZISNU PANDANWANGI 01</span>
+      </a>
+
+      <nav class="nav-links" id="navLinksTop">
+        <a href="index.html">Beranda</a>
+        <a href="tentang.html" class="active">Tentang</a>
+        <a href="program.html">Program</a>
+        <a href="donasi.html">Donasi</a>
+        <a href="laporan.html">Laporan</a>
+        <a href="berita.html">Berita</a>
+        <a href="kontak.html">Kontak</a>
+      </nav>
+
+      <div class="nav-cta">
+        <button id="donateTop2" class="btn btn-donate">DONASI SEKARANG</button>
+        <button id="navToggleTop" class="nav-toggle" aria-label="Toggle menu">☰</button>
+      </div>
+    </div>
+  </header>
+
+  <main class="container" style="padding-top:28px;">
+
+    <!-- ABOUT HERO -->
+    <section class="about-hero" aria-label="Ringkasan Tentang">
+      <div class="hero-left">
+        <h1>UPZISNU Pandanwangi 01</h1>
+        <p>Unit Pengumpul Zakat, Infak, dan Shadaqah di bawah naungan <strong>NU CARE – LAZISNU PCNU Lumajang</strong>. Berkomitmen untuk mengelola ZIS secara amanah, transparan, dan tepat sasaran.</p>
+        <div style="margin-top:10px;">
+          <span class="sk-badge">SK: 0241/A-SK/PC-LAZISNU/II/2025</span>
+        </div>
+      </div>
+
+      <div style="width:320px">
+        <div class="info-box">
+          <p><strong>Alamat</strong><br>Jl. Wachid Hasyim Desa Pandanwangi 01, Tempeh, Lumajang</p>
+          <p><strong>WA</strong><br><a href="https://wa.me/6285134739466" target="_blank" rel="noopener">0851-3473-9466</a></p>
+          <p><strong>Rekening</strong><br>Bank Jatim • <strong>7432000131</strong></p>
+          <p style="margin-top:10px;"><a class="sk-download" href="assets/laporan/surat-keterangan-sk.pdf" target="_blank" rel="noopener">Download SK (PDF)</a></p>
+        </div>
+      </div>
+    </section>
+
+    <!-- VISI & MISI -->
+    <section style="margin-top:12px;">
+      <div class="vision-card">
+        <h2 style="margin-bottom:8px;color:var(--green-700)">Visi</h2>
+        <p style="margin-bottom:12px;">Menjadi lembaga pengelola zakat yang <strong>amanah, profesional, dan bermanfaat</strong> bagi masyarakat Desa Pandanwangi.</p>
+
+        <h3 style="margin-top:6px;color:var(--green-700)">Misi</h3>
+        <ul class="mission-list">
+          <li>Menghimpun dana zakat, infak, dan sedekah dari masyarakat.</li>
+          <li>Menyalurkan dana secara tepat sasaran kepada mustahik.</li>
+          <li>Meningkatkan kesejahteraan masyarakat melalui program sosial dan kemanusiaan.</li>
+          <li>Menyusun laporan pengelolaan dana yang transparan dan akuntabel.</li>
+          <li>Mengembangkan program pemberdayaan lokal yang berkelanjutan.</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- STRUKTUR PENGURUS -->
+    <section class="programs" style="padding-top:18px;">
+      <h2>Struktur Pengurus</h2>
+
+      <div class="pengurus-grid" style="margin-top:12px;">
+        <article class="pengurus-card">
+          <img src="assets/pengurus/dewan-syariah.jpg" alt="Dewan Syariah (opsional)">
+          <div class="pengurus-meta">
+            <div class="role-badge">Dewan Syariah</div>
+            <h4>Imam Subawe, S.Ag</h4>
+            <p>M. Ainur Rofiq, S.Pd</p>
+          </div>
+        </article>
+
+        <article class="pengurus-card">
+          <img src="assets/pengurus/dewan-pengawas.jpg" alt="Dewan Pengawas (opsional)">
+          <div class="pengurus-meta">
+            <div class="role-badge">Dewan Pengawas</div>
+            <h4>Sugeng Waluyo</h4>
+            <p>Agus Subali</p>
+          </div>
+        </article>
+
+        <article class="pengurus-card">
+          <img src="assets/pengurus/ketua.jpg" alt="Ketua (opsional)">
+          <div class="pengurus-meta">
+            <div class="role-badge">Pengurus Harian</div>
+            <h4>Edy Hartono</h4>
+            <p><strong>Sekretaris:</strong> Zainul Amin, S.Pd<br><strong>Bendahara:</strong> Anang Wibisono</p>
+          </div>
+        </article>
+
+        <article class="pengurus-card">
+          <img src="assets/pengurus/bidang.jpg" alt="Bidang (opsional)">
+          <div class="pengurus-meta">
+            <div class="role-badge">Bidang &amp; Staff</div>
+            <h4>Tim Pelaksana</h4>
+            <p>
+              Penghimpunan & Distribusi: Muhammad Ali, Sugi, Bambang, Amiri, Canda, Daruji<br>
+              Humas: M. Kemal<br>
+              Pendayagunaan & Usaha: Reza, Anton<br>
+              Kesehatan: Ibnu Hajar, Moh. Agus Wahyudi<br>
+              Sosial & Budaya: M. Aqil Safaat, M. Miski, Sulhan
+            </p>
+          </div>
+        </article>
+      </div>
+
+      <div class="center" style="margin-top:12px;">
+        <a href="kontak.html" class="btn btn-outline">Daftar Kontak Pengurus</a>
+      </div>
+    </section>
+
+    <!-- DOKUMENTASI -->
+    <section class="news" style="padding-top:18px;">
+      <h2>Dokumentasi Kegiatan</h2>
+      <div class="gallery-grid">
+        <img src="assets/program/santunan-yatim.jpg" alt="Santunan Yatim">
+        <img src="assets/program/sembako.jpg" alt="Penyaluran Sembako">
+        <img src="assets/program/santunan-duka-cita.jpg" alt="Santunan Duka Cita">
+      </div>
+    </section>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="site-footer">
+    <div class="container footer-grid">
+  
+      <!-- KOLOM 1: LOGO & DESKRIPSI -->
+      <div class="footer-col">
+        <img src="assets/img/logo-lazisnu.png" alt="Logo LAZISNU" class="footer-logo">
+        <p>
+          LAZISNU Pandanwangi 01 adalah lembaga amil zakat yang mengelola Zakat, Infak, dan Sedekah
+          secara amanah, transparan, dan profesional.
+        </p>
+      </div>
+  
+      <!-- KOLOM 2: MENU CEPAT -->
+      <div class="footer-col">
+        <h4>Menu</h4>
+        <ul class="footer-links">
+          <li><a href="index.html">Beranda</a></li>
+          <li><a href="tentang.html">Tentang</a></li>
+          <li><a href="program.html">Program</a></li>
+          <li><a href="donasi.html">Donasi</a></li>
+          <li><a href="laporan.html">Laporan</a></li>
+          <li><a href="berita.html">Berita</a></li>
+          <li><a href="kontak.html">Kontak</a></li>
+        </ul>
+      </div>
+  
+      <!-- KOLOM 3: KONTAK -->
+      <div class="footer-col">
+        <h4>Kontak</h4>
+        <p>Jl. Wachid Hasyim<br>Pandanwangi 01, Tempeh, Lumajang</p>
+        <p>WhatsApp: 0851-3473-9466</p>
+        <p>Email: lazisn393@gmail.com</p>
+      </div>
+    </div>
+  
+    <div class="footer-bottom">
+      <div class="container footer-bottom-inner">
+        <small>© <span id="year"></span> LAZISNU Pandanwangi 01</small>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById('yearTentang').textContent = new Date().getFullYear();
+
+    document.getElementById('donateTop2')?.addEventListener('click', ()=> {
+      window.location.href = 'donasi.html';
+    });
+
+    document.getElementById('navToggleTop')?.addEventListener('click', ()=> {
+      const nav = document.getElementById('navLinksTop');
+      if(!nav) return;
+      nav.style.display = nav.style.display === 'flex' ? 'none' : 'flex';
+      nav.style.flexDirection = 'column';
+      nav.style.gap = '8px';
+      nav.style.padding = '12px';
+      nav.style.background = '#fff';
+      nav.style.position = 'absolute';
+      nav.style.right = '12px';
+      nav.style.top = '64px';
+      nav.style.boxShadow = '0 8px 20px rgba(0,0,0,.08)';
+    });
+  </script>
+</body>
+</html>
