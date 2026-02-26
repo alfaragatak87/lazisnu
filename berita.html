@@ -8,21 +8,9 @@
 
   <style>
     body{background:#f7fbf7}
-
     .berita-wrap{max-width:1100px;margin:30px auto;padding:20px}
-
-    .section-title{
-      font-size:26px;
-      color:#19913d;
-      margin-bottom:6px;
-    }
-
-    .section-sub{
-      color:#666;
-      font-size:14px;
-      border-bottom:2px solid #e6f2e9;
-      padding-bottom:10px;
-    }
+    .section-title{font-size:26px;color:#19913d;margin-bottom:6px;}
+    .section-sub{color:#666;font-size:14px;border-bottom:2px solid #e6f2e9;padding-bottom:10px;}
 
     .berita-grid{
       display:grid;
@@ -32,313 +20,194 @@
     }
 
     .berita-card{
-      background:#fff;
-      border-radius:14px;
-      overflow:hidden;
+      background:#fff;border-radius:14px;overflow:hidden;
       box-shadow:0 12px 30px rgba(0,0,0,.06);
-      display:flex;
-      flex-direction:column;
+      display:flex;flex-direction:column;
       transition:.3s;
-      transform:translateY(20px);
-      opacity:0;
-      animation:fadeUp .6s forwards;
     }
 
-    .berita-card:nth-child(2){animation-delay:.15s}
-    .berita-card:nth-child(3){animation-delay:.3s}
+    .berita-card img{width:100%;height:180px;object-fit:cover;}
 
-    @keyframes fadeUp{
-      to{transform:translateY(0);opacity:1}
-    }
-
-    .berita-card:hover{
-      transform:translateY(-6px);
-      box-shadow:0 18px 40px rgba(0,0,0,.12);
-    }
-
-    .berita-card img{
-      width:100%;
-      height:180px;
-      object-fit:cover;
-    }
-
-    .berita-body{
-      padding:16px;
-      display:flex;
-      flex-direction:column;
-      flex:1;
-    }
+    .berita-body{padding:16px;display:flex;flex-direction:column;flex:1;}
 
     .berita-date{
-      font-size:12px;
-      background:#e6f7ec;
-      color:#1e7a3a;
-      display:inline-block;
-      padding:4px 8px;
-      border-radius:6px;
-      margin-bottom:8px;
-      font-weight:700;
-      width:max-content;
+      font-size:12px;background:#e6f7ec;color:#1e7a3a;
+      display:inline-block;padding:4px 8px;border-radius:6px;
+      margin-bottom:8px;font-weight:700;width:max-content;
     }
 
-    .berita-body h3{
-      margin:0 0 8px 0;
-      color:#1e7a3a;
-      font-size:17px;
-    }
-
-    .berita-body p{
-      font-size:13px;
-      color:#555;
-      flex:1;
-    }
+    .berita-body h3{margin:0 0 8px 0;color:#1e7a3a;font-size:17px;}
+    .berita-body p{font-size:13px;color:#555;flex:1;}
 
     .btn-baca{
-      margin-top:12px;
-      background:#2fa05a;
-      color:#fff;
-      padding:10px;
-      border-radius:10px;
-      font-weight:700;
-      font-size:13px;
-      text-align:center;
-      cursor:pointer;
-      transition:.2s;
+      margin-top:12px;background:#2fa05a;color:#fff;
+      padding:10px;border-radius:10px;font-weight:700;
+      font-size:13px;text-align:center;cursor:pointer;
     }
 
-    .btn-baca:hover{background:#24894c}
-
-    /* MODAL */
     .modal{
-      position:fixed;
-      top:0;left:0;
-      width:100%;height:100%;
-      background:rgba(0,0,0,.6);
-      display:none;
-      align-items:center;
-      justify-content:center;
-      z-index:1000;
+      position:fixed;top:0;left:0;width:100%;height:100%;
+      background:rgba(0,0,0,.6);display:none;
+      align-items:center;justify-content:center;z-index:1000;
     }
 
     .modal-content{
-      background:#fff;
-      padding:20px;
-      border-radius:14px;
-      max-width:650px;
-      width:90%;
-      animation:fadeUp .4s;
+      background:#fff;padding:20px;border-radius:14px;
+      max-width:650px;width:90%;
     }
 
-    .modal-content img{
-      width:100%;
-      border-radius:10px;
-      margin-bottom:12px;
-    }
+    .modal-content img{width:100%;border-radius:10px;margin-bottom:12px;}
+    .modal-close{float:right;cursor:pointer;font-weight:700;color:#999;}
 
-    .modal-close{
-      float:right;
-      cursor:pointer;
-      font-weight:700;
-      color:#999;
-    }
-
-    @media(max-width:900px){
-      .berita-grid{grid-template-columns:1fr 1fr}
-    }
-
-    @media(max-width:600px){
-      .berita-grid{grid-template-columns:1fr}
-    }
+    @media(max-width:900px){.berita-grid{grid-template-columns:1fr 1fr}}
+    @media(max-width:600px){.berita-grid{grid-template-columns:1fr}}
   </style>
 </head>
 <body>
 
-  <!-- NAVBAR GLOBAL -->
-  <header class="nav-wrap">
-    <div class="container nav">
-      <a class="brand" href="index.html">
-        <img src="assets/img/logo-lazisnu.png" class="logo">
-        <span class="brand-text">UPZISNU PANDANWANGI 01</span>
-      </a>
+<header class="nav-wrap">
+  <div class="container nav">
+    <a class="brand" href="index.html">
+      <img src="assets/img/logo-lazisnu.png" class="logo">
+      <span class="brand-text">UPZISNU PANDANWANGI 01</span>
+    </a>
 
-      <nav class="nav-links" id="navLinks">
-        <a href="index.html">Beranda</a>
-        <a href="tentang.html">Tentang</a>
-        <a href="program.html">Program</a>
-        <a href="donasi.html">Donasi</a>
-        <a href="laporan.html">Laporan</a>
-        <a href="berita.html" class="active">Berita</a>
-        <a href="kontak.html">Kontak</a>
-      </nav>
+    <nav class="nav-links" id="navLinks">
+      <a href="index.html">Beranda</a>
+      <a href="tentang.html">Tentang</a>
+      <a href="program.html">Program</a>
+      <a href="donasi.html">Donasi</a>
+      <a href="laporan.html">Laporan</a>
+      <a href="berita.html" class="active">Berita</a>
+      <a href="kontak.html">Kontak</a>
+    </nav>
 
-      <div class="nav-cta">
-        <button class="btn btn-donate" id="donateBtn">DONASI SEKARANG</button>
-        <button class="nav-toggle" id="navToggle">☰</button>
-      </div>
-    </div>
-  </header>
-
-  <div class="berita-wrap">
-
-    <div class="section-title">Berita & Kegiatan</div>
-    <div class="section-sub">
-      Dokumentasi kegiatan penyaluran dan program LAZISNU Pandanwangi 01.
-    </div>
-
-    <div class="berita-grid">
-
-      <!-- Santunan Yatim -->
-      <div class="berita-card">
-        <img src="assets/img/berita/berita-santunan-yatim.jpg">
-        <div class="berita-body">
-          <div class="berita-date">12 Feb 2026</div>
-          <h3>Santunan Anak Yatim</h3>
-          <p>Pemberian santunan dan paket makanan kepada anak yatim di Desa Pandanwangi.</p>
-          <div class="btn-baca" onclick="openModal('modal1')">Baca Selengkapnya</div>
-        </div>
-      </div>
-
-      <!-- Sembako -->
-      <div class="berita-card">
-        <img src="assets/img/berita/berita-sembako.jpg">
-        <div class="berita-body">
-          <div class="berita-date">03 Feb 2026</div>
-          <h3>Penyaluran Paket Sembako</h3>
-          <p>Pendistribusian paket sembako kepada warga kurang mampu di Pandanwangi.</p>
-          <div class="btn-baca" onclick="openModal('modal2')">Baca Selengkapnya</div>
-        </div>
-      </div>
-
-      <!-- Duka Cita -->
-      <div class="berita-card">
-        <img src="assets/img/berita/berita-santunan-duka-cita.jpg">
-        <div class="berita-body">
-          <div class="berita-date">28 Jan 2026</div>
-          <h3>Santunan Duka Cita</h3>
-          <p>Pemberian bantuan kepada keluarga yang sedang berduka sebagai bentuk kepedulian sosial.</p>
-          <div class="btn-baca" onclick="openModal('modal3')">Baca Selengkapnya</div>
-        </div>
-      </div>
-
+    <div class="nav-cta">
+      <button class="btn btn-donate" id="donateBtn">DONASI SEKARANG</button>
+      <button class="nav-toggle" id="navToggle">☰</button>
     </div>
   </div>
+</header>
 
-  <!-- MODALS (tetap sama seperti kamu) -->
-  <!-- Modal Santunan Yatim -->
-  <div class="modal" id="modal1">
-    <div class="modal-content">
-      <span class="modal-close" onclick="closeModal('modal1')">✖</span>
+<div class="berita-wrap">
+  <div class="section-title">Berita & Kegiatan</div>
+  <div class="section-sub">
+    Dokumentasi kegiatan penyaluran dan program LAZISNU Pandanwangi 01.
+  </div>
+
+  <!-- BERITA DARI CMS (AUTO) -->
+  <div class="berita-grid" id="list-berita"></div>
+
+  <!-- BERITA MANUAL (FALLBACK) -->
+  <div class="berita-grid">
+
+    <div class="berita-card">
       <img src="assets/img/berita/berita-santunan-yatim.jpg">
-      <h2>Santunan Anak Yatim</h2>
-      <p>LAZISNU Pandanwangi 01 menyalurkan santunan kepada 20 anak yatim berupa uang tunai dan paket makanan.</p>
+      <div class="berita-body">
+        <div class="berita-date">12 Feb 2026</div>
+        <h3>Santunan Anak Yatim</h3>
+        <p>Pemberian santunan dan paket makanan kepada anak yatim di Desa Pandanwangi.</p>
+        <div class="btn-baca" onclick="openModal('modal1')">Baca Selengkapnya</div>
+      </div>
     </div>
-  </div>
 
-  <!-- Modal Sembako -->
-  <div class="modal" id="modal2">
-    <div class="modal-content">
-      <span class="modal-close" onclick="closeModal('modal2')">✖</span>
+    <div class="berita-card">
       <img src="assets/img/berita/berita-sembako.jpg">
-      <h2>Penyaluran Paket Sembako</h2>
-      <p>Paket sembako disalurkan kepada keluarga kurang mampu di Desa Pandanwangi.</p>
+      <div class="berita-body">
+        <div class="berita-date">03 Feb 2026</div>
+        <h3>Penyaluran Paket Sembako</h3>
+        <p>Pendistribusian paket sembako kepada warga kurang mampu di Pandanwangi.</p>
+        <div class="btn-baca" onclick="openModal('modal2')">Baca Selengkapnya</div>
+      </div>
     </div>
-  </div>
 
-  <!-- Modal Duka Cita -->
-  <div class="modal" id="modal3">
-    <div class="modal-content">
-      <span class="modal-close" onclick="closeModal('modal3')">✖</span>
+    <div class="berita-card">
       <img src="assets/img/berita/berita-santunan-duka-cita.jpg">
-      <h2>Santunan Duka Cita</h2>
-      <p>Bantuan diberikan sebagai bentuk empati dan kepedulian sosial kepada keluarga yang berduka.</p>
+      <div class="berita-body">
+        <div class="berita-date">28 Jan 2026</div>
+        <h3>Santunan Duka Cita</h3>
+        <p>Bantuan diberikan sebagai bentuk empati dan kepedulian sosial kepada keluarga yang berduka.</p>
+        <div class="btn-baca" onclick="openModal('modal3')">Baca Selengkapnya</div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<footer class="site-footer">
+  <div class="container footer-grid">
+    <div class="footer-col">
+      <img src="assets/img/logo-lazisnu.png" class="footer-logo">
+      <p>LAZISNU Pandanwangi 01 adalah lembaga amil zakat yang mengelola Zakat, Infak, dan Sedekah secara amanah.</p>
+    </div>
+    <div class="footer-col">
+      <h4>Menu</h4>
+      <ul class="footer-links">
+        <li><a href="index.html">Beranda</a></li>
+        <li><a href="tentang.html">Tentang</a></li>
+        <li><a href="program.html">Program</a></li>
+        <li><a href="donasi.html">Donasi</a></li>
+        <li><a href="laporan.html">Laporan</a></li>
+        <li><a href="berita.html">Berita</a></li>
+        <li><a href="kontak.html">Kontak</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Kontak</h4>
+      <p>Jl. Wachid Hasyim<br>Pandanwangi 01, Tempeh, Lumajang</p>
+      <p>WhatsApp: 0851-3473-9466</p>
+      <p>Email: lazisn393@gmail.com</p>
     </div>
   </div>
-  <!-- FOOTER -->
-  <footer class="site-footer">
-    <div class="container footer-grid">
-  
-      <!-- KOLOM 1: LOGO & DESKRIPSI -->
-      <div class="footer-col">
-        <img src="assets/img/logo-lazisnu.png" alt="Logo LAZISNU" class="footer-logo">
-        <p>
-          LAZISNU Pandanwangi 01 adalah lembaga amil zakat yang mengelola Zakat, Infak, dan Sedekah
-          secara amanah, transparan, dan profesional.
-        </p>
-      </div>
-  
-      <!-- KOLOM 2: MENU CEPAT -->
-      <div class="footer-col">
-        <h4>Menu</h4>
-        <ul class="footer-links">
-          <li><a href="index.html">Beranda</a></li>
-          <li><a href="tentang.html">Tentang</a></li>
-          <li><a href="program.html">Program</a></li>
-          <li><a href="donasi.html">Donasi</a></li>
-          <li><a href="laporan.html">Laporan</a></li>
-          <li><a href="berita.html">Berita</a></li>
-          <li><a href="kontak.html">Kontak</a></li>
-        </ul>
-      </div>
-  
-      <!-- KOLOM 3: KONTAK -->
-      <div class="footer-col">
-        <h4>Kontak</h4>
-        <p>Jl. Wachid Hasyim<br>Pandanwangi 01, Tempeh, Lumajang</p>
-        <p>WhatsApp: 0851-3473-9466</p>
-        <p>Email: lazisn393@gmail.com</p>
-      </div>
-    </div>
-  
-    <div class="footer-bottom">
-      <div class="container footer-bottom-inner">
-        <small>© <span id="year"></span> LAZISNU Pandanwangi 01</small>
-        </div>
-      </div>
-    </div>
-  </footer>
-  <script src="js/script.js"></script>
-  <script>
-    function openModal(id){
-      document.getElementById(id).style.display = "flex";
-    }
-    function closeModal(id){
-      document.getElementById(id).style.display = "none";
-    }
-  </script>
-  <div id="list-berita"></div>
+  <div class="footer-bottom">
+    <small>© <span id="year"></span> LAZISNU Pandanwangi 01</small>
+  </div>
+</footer>
+
+<script src="js/script.js"></script>
 
 <script>
 async function loadBerita() {
   const url = "https://api.github.com/repos/alfaragatak87/lazisnu/contents/admin-data/berita";
 
-  const response = await fetch(url);
-  const files = await response.json();
+  try {
+    const response = await fetch(url);
+    const files = await response.json();
 
-  let html = "";
+    let html = "";
 
-  for (let file of files) {
-    const fileRes = await fetch(file.download_url);
-    const text = await fileRes.text();
+    for (let file of files.reverse()) {
+      const fileRes = await fetch(file.download_url);
+      const text = await fileRes.text();
 
-    const title = text.match(/title: "(.*?)"/)?.[1] || "Tanpa Judul";
-    const date = text.match(/date: (.*)/)?.[1] || "";
-    const image = text.match(/image: "(.*?)"/)?.[1] || "";
-    const body = text.split("---")[2] || "";
+      const title = text.match(/title:\s*"(.*?)"/)?.[1] || "Tanpa Judul";
+      const date = text.match(/date:\s*(.*)/)?.[1] || "";
+      const image = text.match(/image:\s*"(.*?)"/)?.[1] || "";
+      const body = text.split('---')[2] || "";
 
-    html += `
-      <div class="card-berita">
-        <img src="${image}" width="100%">
-        <h3>${title}</h3>
-        <small>${new Date(date).toLocaleDateString("id-ID")}</small>
-        <p>${body.substring(0, 150)}...</p>
-      </div>
-    `;
+      html += `
+        <div class="berita-card">
+          <img src="${image}">
+          <div class="berita-body">
+            <div class="berita-date">${new Date(date).toLocaleDateString("id-ID")}</div>
+            <h3>${title}</h3>
+            <p>${body.substring(0,120)}...</p>
+          </div>
+        </div>
+      `;
+    }
+
+    document.getElementById("list-berita").innerHTML = html;
+
+  } catch (err) {
+    console.error("Gagal load berita:", err);
   }
-
-  document.getElementById("list-berita").innerHTML = html;
 }
 
 loadBerita();
+
+function openModal(id){document.getElementById(id).style.display="flex";}
+function closeModal(id){document.getElementById(id).style.display="none";}
 </script>
 
 </body>
