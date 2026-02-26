@@ -182,16 +182,34 @@ async function loadBerita() {
 
       const title = text.match(/title:\s*"(.*?)"/)?.[1] || "Tanpa Judul";
       const date = text.match(/date:\s*(.*)/)?.[1] || "";
-      const image = text.match(/image:\s*"(.*?)"/)?.[1] || "";
+      let image = text.match(/image:\s*"(.*?)"/)?.[1] || "";
       const body = text.split('---')[2] || "";
+
+      // 🔧 FIX URL GAMBAR CMS
+      if (image.startsWith("/")) {
+        image = "https://lazisnupandanwangi1.netlify.app" + image;
+      }
+
+      const modalId = "modal-" + Math.random().toString(36).substring(2, 9);
 
       html += `
         <div class="berita-card">
-          <img src="${image}">
+          <img src="${image}" alt="${title}">
           <div class="berita-body">
             <div class="berita-date">${new Date(date).toLocaleDateString("id-ID")}</div>
             <h3>${title}</h3>
             <p>${body.substring(0,120)}...</p>
+            <div class="btn-baca" onclick="openModal('${modalId}')">Baca Selengkapnya</div>
+          </div>
+        </div>
+
+        <!-- MODAL CMS -->
+        <div class="modal" id="${modalId}">
+          <div class="modal-content">
+            <span class="modal-close" onclick="closeModal('${modalId}')">✖</span>
+            <h2>${title}</h2>
+            <img src="${image}" alt="${title}">
+            <p>${body}</p>
           </div>
         </div>
       `;
@@ -206,8 +224,12 @@ async function loadBerita() {
 
 loadBerita();
 
-function openModal(id){document.getElementById(id).style.display="flex";}
-function closeModal(id){document.getElementById(id).style.display="none";}
+function openModal(id){
+  document.getElementById(id).style.display="flex";
+}
+function closeModal(id){
+  document.getElementById(id).style.display="none";
+}
 </script>
 
 </body>
