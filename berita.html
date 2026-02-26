@@ -305,6 +305,41 @@
       document.getElementById(id).style.display = "none";
     }
   </script>
+  <div id="list-berita"></div>
+
+<script>
+async function loadBerita() {
+  const url = "https://api.github.com/repos/alfaragatak87/lazisnu/contents/admin-data/berita";
+
+  const response = await fetch(url);
+  const files = await response.json();
+
+  let html = "";
+
+  for (let file of files) {
+    const fileRes = await fetch(file.download_url);
+    const text = await fileRes.text();
+
+    const title = text.match(/title: "(.*?)"/)?.[1] || "Tanpa Judul";
+    const date = text.match(/date: (.*)/)?.[1] || "";
+    const image = text.match(/image: "(.*?)"/)?.[1] || "";
+    const body = text.split("---")[2] || "";
+
+    html += `
+      <div class="card-berita">
+        <img src="${image}" width="100%">
+        <h3>${title}</h3>
+        <small>${new Date(date).toLocaleDateString("id-ID")}</small>
+        <p>${body.substring(0, 150)}...</p>
+      </div>
+    `;
+  }
+
+  document.getElementById("list-berita").innerHTML = html;
+}
+
+loadBerita();
+</script>
 
 </body>
 </html>
