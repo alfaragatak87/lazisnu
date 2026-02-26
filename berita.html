@@ -168,11 +168,11 @@
 
 <script>
 async function loadBerita() {
-  const url = "https://api.github.com/repos/alfaragatak87/lazisnu/contents/admin-data/berita";
+  const repoUrl = "https://api.github.com/repos/alfaragatak87/lazisnu/contents/admin-data/berita";
 
   try {
-    const response = await fetch(url);
-    const files = await response.json();
+    const res = await fetch(repoUrl);
+    const files = await res.json();
 
     let html = "";
 
@@ -180,15 +180,27 @@ async function loadBerita() {
       const fileRes = await fetch(file.download_url);
       const text = await fileRes.text();
 
-      const title = text.match(/title:\s*"(.*?)"/)?.[1] || "Tanpa Judul";
-      const date = text.match(/date:\s*(.*)/)?.[1] || "";
-      let image = text.match(/image:\s*"(.*?)"/)?.[1] || "";
-      const body = text.split('---')[2] || "";
+      // 🔥 Ambil bagian YAML (di antara ---)
+      const yamlMatch = text.match(/---([\s\S]*?)---/);
+      const yaml = yamlMatch ? yamlMatch[1] : "";
 
-      // 🔧 FIX URL GAMBAR CMS
+      const titleMatch = yaml.match(/title:\s*(.*)/);
+      const dateMatch = yaml.match(/date:\s*(.*)/);
+      const imageMatch = yaml.match(/image:\s*(.*)/);
+
+      const title = titleMatch ? titleMatch[1].trim() : "Tanpa Judul";
+      const date = dateMatch ? dateMatch[1].trim() : "";
+      let image = imageMatch ? imageMatch[1].trim() : "";
+
+      // Bersihkan tanda kutip kalau ada
+      image = image.replace(/"/g, "");
+
+      // 🔥 Fix URL gambar biar tidak error
       if (image.startsWith("/")) {
-        image = "https://lazisnupandanwangi1.netlify.app" + image;
+        image = window.location.origin + image;
       }
+
+      const body = text.split('---')[2] || "";
 
       const modalId = "modal-" + Math.random().toString(36).substring(2, 9);
 
@@ -199,16 +211,17 @@ async function loadBerita() {
             <div class="berita-date">${new Date(date).toLocaleDateString("id-ID")}</div>
             <h3>${title}</h3>
             <p>${body.substring(0,120)}...</p>
-            <div class="btn-baca" onclick="openModal('${modalId}')">Baca Selengkapnya</div>
+            <div class="btn-baca" onclick="openModal('${modalId}')">
+              Baca Selengkapnya
+            </div>
           </div>
         </div>
 
-        <!-- MODAL CMS -->
         <div class="modal" id="${modalId}">
           <div class="modal-content">
             <span class="modal-close" onclick="closeModal('${modalId}')">✖</span>
             <h2>${title}</h2>
-            <img src="${image}" alt="${title}">
+            <img src="${image}">
             <p>${body}</p>
           </div>
         </div>
@@ -217,8 +230,8 @@ async function loadBerita() {
 
     document.getElementById("list-berita").innerHTML = html;
 
-  } catch (err) {
-    console.error("Gagal load berita:", err);
+  } catch (error) {
+    console.error("Gagal load berita:", error);
   }
 }
 
@@ -227,6 +240,7 @@ loadBerita();
 function openModal(id){
   document.getElementById(id).style.display="flex";
 }
+
 function closeModal(id){
   document.getElementById(id).style.display="none";
 }
